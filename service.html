@@ -42,23 +42,62 @@
         ///////////////////////////////-->
         <section class="as_header_wrapper">
           <div class="as_logo">
-            <a href="javascript:;"><img src="https://dummyimage.com/148x59" alt="Logo"></a>
+            <a href="/"><img src="./assets/images/mod/logo.png" alt="Logo"></a>
           </div>
-          <div class="as_menu">
+          
+          <!-- Desktop menu -->
+          <div class="as_menu desktop_menu">
             <ul>
-              <li><a href="index.html" >home</a></li>
+              <li><a href="index.html" class="active">home</a></li>
               <li><a href="about.html">about</a></li>
               <li><a href="service.html" class="active">services</a></li>
               <li><a href="appointment.html">appointment</a></li>
               <li><a href="contact.html">contact</a></li>
             </ul>
           </div>
-          <div class="as_appointment_btn">
+          
+          <!-- Appointment button for desktop -->
+          <div class="as_appointment_btn desktop_btn">
             <a href="appointment.html" class="as_btn">Get Appointment</a>
           </div>
+          
+          <!-- Toggle button for mobile -->
           <div class="as_toggle">
             <img src="assets/images/svg/menu.svg" alt="Menu">
           </div>
+          
+          <!-- Separate mobile menu wrapper -->
+          <div class="as_menu_wrapper">
+            <div class="as_menu_close">
+              <span>×</span>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="as_appointment_btn mobile_btn">
+        
+              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; align-items: start; gap: 20px;">
+                <li><a href="index.html" class="nav-link active" style="text-decoration: none; color: white; font-weight: bold; padding: 8px 12px; border-radius: 4px;">Home</a></li>
+                <li><a href="about.html" class="nav-link" style="text-decoration: none; color: white; font-weight: bold; padding: 8px 12px; border-radius: 4px;">About</a></li>
+                <li><a href="service.html" class="nav-link" style="text-decoration: none; color: white; font-weight: bold; padding: 8px 12px; border-radius: 4px;" class="active">Services</a></li>
+                <li><a href="appointment.html" class="nav-link" style="text-decoration: none; color: white; font-weight: bold; padding: 8px 12px; border-radius: 4px;">Appointment</a></li>
+                <li><a href="contact.html" class="nav-link" style="text-decoration: none; color: white; font-weight: bold; padding: 8px 12px; border-radius: 4px;">Contact</a></li>
+              </ul>
+              <a href="appointment.html" class="as_btn">Get Appointment</a>
+            </div>
+            
+            <div class="as_menu mobile_menu">
+              <ul>
+                <li><a href="index.html" >home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="service.html" class="active">services</a></li>
+                <li><a href="appointment.html">appointment</a></li>
+                <li><a href="contact.html">contact</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Overlay -->
+          <div class="as_body_overlay"></div>
         </section>
       <!-- //////////////////////////
           BreadCrumb Section
@@ -305,92 +344,92 @@
           What our coustmer
         ///////////////////////////////-->
 
-      <section class="as_customer_wrapper as_padderBottom80 as_padderTop80">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-              <h1 class="as_heading as_heading_center">What Our Clients Say</h1>
-              <p class="as_font14 as_margin0 as_padderBottom50">
-                Our clients share their experiences with our accurate<br />astrological
-                guidance and life-changing consultations.
-              </p>
-            </div>
-
-            <div class="row as_customer_slider">
-              <div class="col-lg-6 col-md-6">
-                <div class="as_customer_box text-center">
-                  <span class="as_customer_img">
-                    <img src="https://dummyimage.com/91x91" alt="" />
-                    <span
-                      ><img src="assets/images/svg/quote1.svg" alt=""
-                    /></span>
-                  </span>
-                  <p class="as_margin0">
-                    The Vastu consultation completely transformed my home's
-                    energy. After implementing the changes, my family's health
-                    improved and business grew remarkably. Highly recommend
-                    their services!
-                  </p>
-                  <h3>Rajesh Sharma</h3>
-                  <p class="as_margin0">Business Owner</p>
-                </div>
+        <section class="as_customer_wrapper as_padderBottom80 as_padderTop80">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <h1 class="as_heading as_heading_center">What Our Clients Say</h1>
+                <p class="as_font14 as_margin0 as_padderBottom50">
+                  Our clients share their experiences with our accurate<br />astrological
+                  guidance and life-changing consultations.
+                </p>
               </div>
-              <div class="col-lg-6 col-md-6">
-                <div class="as_customer_box text-center">
-                  <span class="as_customer_img">
-                    <img src="https://dummyimage.com/91x91" alt="" />
-                    <span
-                      ><img src="assets/images/svg/quote1.svg" alt=""
-                    /></span>
-                  </span>
-                  <p class="as_margin0">
-                    My Manglik Dosha reading was incredibly accurate. The
-                    remedies suggested helped me find a compatible life partner
-                    after years of struggle. Grateful for their genuine
-                    guidance.
-                  </p>
-                  <h3>Priya Patel</h3>
-                  <p class="as_margin0">Software Engineer</p>
+  
+              <div class="row as_customer_slider">
+                <div class="col-lg-6 col-md-6">
+                  <div class="as_customer_box text-center">
+                    <span class="as_customer_img">
+                      <img src="./assets/images/mod/client1.jpg" alt="" />
+                      <span
+                        ><img src="assets/images/svg/quote1.svg" alt=""
+                      /></span>
+                    </span>
+                    <p class="as_margin0">
+                      The Vastu consultation completely transformed my home's
+                      energy. After implementing the changes, my family's health
+                      improved and business grew remarkably. Highly recommend
+                      their services!
+                    </p>
+                    <h3>Rajesh Sharma</h3>
+                    <p class="as_margin0">Business Owner</p>
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <div class="as_customer_box text-center">
-                  <span class="as_customer_img">
-                    <img src="https://dummyimage.com/91x91" alt="" />
-                    <span
-                      ><img src="assets/images/svg/quote1.svg" alt=""
-                    /></span>
-                  </span>
-                  <p class="as_margin0">
-                    The birth chart analysis revealed career paths I never
-                    considered. Following their advice led to a promotion within
-                    months. Their insights are truly life-changing!
-                  </p>
-                  <h3>Arjun Kapoor</h3>
-                  <p class="as_margin0">Marketing Professional</p>
+                <div class="col-lg-6 col-md-6">
+                  <div class="as_customer_box text-center">
+                    <span class="as_customer_img">
+                      <img src="./assets/images/mod/client2.jpg" alt="" />
+                      <span
+                        ><img src="assets/images/svg/quote1.svg" alt=""
+                      /></span>
+                    </span>
+                    <p class="as_margin0">
+                      My Manglik Dosha reading was incredibly accurate. The
+                      remedies suggested helped me find a compatible life partner
+                      after years of struggle. Grateful for their genuine
+                      guidance.
+                    </p>
+                    <h3>Priya Patel</h3>
+                    <p class="as_margin0">Software Engineer</p>
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <div class="as_customer_box text-center">
-                  <span class="as_customer_img">
-                    <img src="https://dummyimage.com/91x91" alt="" />
-                    <span
-                      ><img src="assets/images/svg/quote1.svg" alt=""
-                    /></span>
-                  </span>
-                  <p class="as_margin0">
-                    The tarot reading predicted my overseas opportunity
-                    accurately. Their guidance helped me prepare mentally and
-                    practically for this big life transition.
-                  </p>
-                  <h3>Meera Desai</h3>
-                  <p class="as_margin0">College Student</p>
+                <div class="col-lg-6 col-md-6">
+                  <div class="as_customer_box text-center">
+                    <span class="as_customer_img">
+                      <img src="./assets/images/mod/client3.jpg" alt="" />
+                      <span
+                        ><img src="assets/images/svg/quote1.svg" alt=""
+                      /></span>
+                    </span>
+                    <p class="as_margin0">
+                      The birth chart analysis revealed career paths I never
+                      considered. Following their advice led to a promotion within
+                      months. Their insights are truly life-changing!
+                    </p>
+                    <h3>Arjun Kapoor</h3>
+                    <p class="as_margin0">Marketing Professional</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <div class="as_customer_box text-center">
+                    <span class="as_customer_img">
+                      <img src="./assets/images/mod/client4.jpg" alt="" />
+                      <span
+                        ><img src="assets/images/svg/quote1.svg" alt=""
+                      /></span>
+                    </span>
+                    <p class="as_margin0">
+                      The tarot reading predicted my overseas opportunity
+                      accurately. Their guidance helped me prepare mentally and
+                      practically for this big life transition.
+                    </p>
+                    <h3>Meera Desai</h3>
+                    <p class="as_margin0">College Student</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       <!-- //////////////////////////
           Footer section
@@ -428,7 +467,7 @@
                   <div class="as_footer_widget">
                     <div class="as_footer_logo">
                       <a href="index.html"
-                        ><img src="https://dummyimage.com/148x59" alt=""
+                        ><img src="./assets/images/mod/logo.png" alt=""
                       /></a>
                     </div>
                     <characteristics>

@@ -721,30 +721,41 @@ span.select2-dropdown.select2-dropdown--above,
 }
 /* header css end */
 /* banner css start */
+/* banner css start */
 .as_banner_wrapper {
-  background-image: url(https://dummyimage.com/1920x950);
+  background-image: url(../images/mod/home-1.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 130px 310px;
+
+  padding: 0;
   overflow: hidden;
+  /* Fix the height issue */
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
+
 .as_banner_detail h5 {
   font-size: 26px;
   margin: 0 0 5px;
 }
+
 .as_banner_detail h1 {
   font-size: 54px;
   line-height: 62px;
   margin: 0 0 13px;
 }
+
 .as_banner_detail p {
   margin-bottom: 26px;
 }
+
 .as_banner_wrapper .slick-dots {
   text-align: center;
   display: none;
 }
+
 .as_banner_img img {
   animation: spin 9s infinite linear;
   -webkit-animation: spin 9s infinite linear;
@@ -752,6 +763,7 @@ span.select2-dropdown.select2-dropdown--above,
   display: inline-block;
   width: 100%;
 }
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -760,34 +772,59 @@ span.select2-dropdown.select2-dropdown--above,
     -webkit-transform: rotate(360deg);
   }
 }
+
+/* Fix carousel arrows positioning */
 .as_banner_slider .slick-arrow.slick-prev {
-  left: -265px;
+  left: 15px;
 }
+
 .as_banner_slider .slick-arrow.slick-next {
-  right: -900px;
+  right: 15px;
 }
+
 .as_banner_wrapper .as_btn:hover {
   background-color: var(--dark-color2);
 }
+
 .as_banner_wrapper .as_btn:hover:after {
   border-left-color: var(--dark-color2);
 }
+
 .as_banner_wrapper .as_btn:hover:before {
   border-right-color: var(--dark-color2);
 }
+
 .as_banner_slider .slick-arrow:hover {
   background-color: var(--secondary-color);
 }
+
 .as_banner_slider .slick-arrow:hover:after {
   border-left-color: var(--secondary-color);
 }
+
 .as_banner_slider .slick-arrow:hover:before {
   border-right-color: var(--secondary-color);
+}
+
+/* Add these new styles to properly center content */
+.as_verticle_center {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.as_banner_slider {
+  padding: 0 50px;
+}
+
+.container-fluid {
+  width: 100%;
+  height: 100%;
 }
 /* banner css end */
 /* about css start */
 .as_about_wrapper {
-  background-image: url('https://dummyimage.com/1920x705');
+  /* background-image: url('../images/mod/about-bg.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1119,7 +1156,7 @@ li.as_form_box {
 /* zodiec sign form css end */
 /* customer css start */
 .as_customer_wrapper {
-  background-image: url('https://dummyimage.com/1920x654');
+  /* background-image: url('../images/mod/coustmer-wrapper.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1496,7 +1533,7 @@ section.as_whychoose_wrapper.as_padderTop80 {
 /* footer css end */
 /* breadcrum start */
 .as_breadcrum_wrapper {
-  background-image: url('https://dummyimage.com/1920x140');
+  background-image: url('../images/mod/breadcrumb.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2152,7 +2189,7 @@ section.as_whychoose_wrapper.as_padderTop80 {
 .as_privacy_wrapper,
 .as_faq_wrapper,
 .as_contact_section {
-  background-image: url(https://dummyimage.com/1920x654);
+  /* background-image: url(https://dummyimage.com/1920x654); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -3255,18 +3292,18 @@ textarea.form-control {
 
 /* Original button styling preserved exactly */
 
-.as_btn:hover {
-  background-color: transparent;
-  color: var(--secondary-color);
-}
+/* .as_btn:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+  }
 
-.as_btn::after {
-  border-left-color: var(--secondary-color);
-}
+  .as_btn::after {
+    border-left-color: var(--secondary-color);
+  }
 
-.as_btn::before {
-  border-right-color: var(--secondary-color);
-}
+  .as_btn::before {
+    border-right-color: var(--secondary-color);
+  } */
 
 /* Mobile Toggle Button */
 .as_toggle {
@@ -3328,4 +3365,597 @@ textarea.form-control {
   .as_logo {
     max-width: 120px;
   }
+}
+img {
+  border-radius: 9px;
+}
+/* Mobile Menu Styles */
+.as_body_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  display: none;
+}
+
+body.menu_is_open .as_body_overlay {
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .as_header_wrapper {
+    padding: 10px 15px;
+    justify-content: space-between;
+  }
+
+  .as_logo {
+    padding: 10px 0;
+    border-right: none;
+  }
+
+  .as_menu_wrapper {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: var(--dark-color1);
+    z-index: 999;
+    padding: 20px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    display: block;
+    flex-direction: column;
+    border-top: none;
+  }
+
+  .as_menu_wrapper.menu_open {
+    right: 0;
+  }
+
+  .as_menu {
+    order: 2;
+    width: 100%;
+    display: block;
+    justify-content: flex-start;
+  }
+
+  .as_menu ul {
+    display: block;
+    padding: 0;
+  }
+
+  .as_menu > ul > li {
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .as_menu > ul > li > a {
+    padding: 12px 0;
+    display: block;
+  }
+
+  .as_menu > ul > li > a:before {
+    display: none;
+  }
+
+  .as_appointment_btn {
+    order: 1;
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+
+  /* For toggle button */
+  .as_toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .as_toggle img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* When menu is hidden in mobile view */
+  .as_header_wrapper .as_appointment_btn {
+    display: block;
+  }
+
+  /* When inside mobile menu */
+  .as_menu_wrapper .as_appointment_btn {
+    display: block;
+  }
+
+  /* Submenu styles if needed */
+  .as_submenu {
+    display: none;
+  }
+
+  .as_submenu.active {
+    display: block;
+    padding-left: 15px;
+  }
+}
+/* Mobile Menu Styles */
+.as_body_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  display: none;
+}
+
+body.menu_is_open .as_body_overlay {
+  display: block;
+}
+
+/* Default styles for desktop */
+.as_menu_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.as_menu {
+  display: block;
+}
+
+/* Make links visible and styled properly in all views */
+.as_menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.as_menu > ul > li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.as_menu > ul > li > a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 25px 0;
+  display: block;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+.as_menu > ul > li > a:hover,
+.as_menu > ul > li > a.active {
+  color: var(--secondary-color, #ff7010);
+}
+
+/* Toggle button - hidden by default */
+.as_toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .as_header_wrapper {
+    padding: 10px 15px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .as_logo {
+    padding: 10px 0;
+    border-right: none;
+  }
+
+  /* Show toggle button on mobile */
+  .as_toggle {
+    display: block;
+  }
+
+  .as_toggle img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Move menu to slide-out panel */
+  .as_menu_wrapper {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: #07273c;
+    z-index: 999;
+    padding: 20px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border-top: none;
+  }
+
+  /* When menu is open */
+  .as_menu_wrapper.menu_open {
+    right: 0;
+  }
+
+  /* Mobile menu adjustments */
+  .as_menu {
+    order: 2;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .as_menu ul {
+    display: block;
+  }
+
+  .as_menu > ul > li {
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .as_menu > ul > li > a {
+    padding: 12px 0;
+    display: block;
+    color: #fff;
+  }
+
+  .as_menu > ul > li > a:before {
+    display: none;
+  }
+
+  /* Appointment button inside mobile menu */
+  .as_menu_wrapper .as_appointment_btn {
+    order: 1;
+    margin: 0 0 20px 0;
+    text-align: center;
+    display: block;
+  }
+
+  /* Appointment button outside menu (desktop) */
+  .as_header_wrapper > .as_appointment_btn {
+    display: none;
+  }
+
+  /* Submenu styles */
+  .as_submenu {
+    display: none;
+    padding-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .as_submenu.active {
+    display: block;
+  }
+
+  .as_submenu li {
+    padding: 5px 0;
+  }
+
+  .as_submenu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 5px 0;
+  }
+}
+/* Additional styles for mobile menu */
+.as_menu_close {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.as_menu_close span {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Variable colors for reference */
+:root {
+  --secondary-color: #ff7010;
+  --dark-color1: #07273c;
+}
+
+@media (max-width: 991px) {
+  .as_menu_close {
+    display: block;
+  }
+
+  /* Ensure menu items are displayed properly in mobile view */
+  .as_menu_wrapper {
+    padding-top: 50px;
+  }
+
+  .as_menu_wrapper .as_menu {
+    display: block;
+    width: 100%;
+  }
+
+  .as_menu_wrapper .as_menu ul {
+    display: block;
+    width: 100%;
+  }
+
+  .as_menu_wrapper .as_menu > ul > li {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .as_menu_wrapper .as_menu > ul > li > a {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  /* Ensure the appointment button is visible */
+  .as_menu_wrapper .as_appointment_btn {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+/* When menu is open, prevent body scrolling */
+body.menu_is_open {
+  overflow: hidden;
+}
+
+/* Ensure the overlay covers the entire screen */
+.as_body_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  display: none;
+}
+
+/* When menu is open, show the overlay */
+body.menu_is_open .as_body_overlay {
+  display: block;
+}
+/* Critical fix for menu links visibility */
+@media (max-width: 991px) {
+  /* Force menu visibility */
+  .as_menu_wrapper.menu_open .as_menu {
+    display: block !important;
+  }
+
+  .as_menu_wrapper.menu_open .as_menu ul {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .as_menu_wrapper.menu_open .as_menu > ul > li {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .as_menu_wrapper.menu_open .as_menu > ul > li > a {
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 0 !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Ensure menu structure is correct */
+  .as_menu_wrapper {
+    flex-direction: column !important;
+    padding: 50px 20px 20px !important;
+  }
+
+  /* Fix menu visibility */
+  .as_menu {
+    margin-top: 20px !important;
+    width: 100% !important;
+  }
+
+  /* Fix toggle button functionality */
+  .as_toggle {
+    display: block !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+}
+/* Complete menu styling solution */
+/* Base header styles */
+.as_header_wrapper {
+  display: flex;
+  background-color: #07273c;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  position: relative;
+  z-index: 100;
+}
+
+.as_logo {
+  padding: 15px 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Desktop Menu */
+.as_menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+.desktop_menu > ul > li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.as_menu > ul > li > a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 25px 0;
+  display: block;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+.as_menu > ul > li > a:hover,
+.as_menu > ul > li > a.active {
+  color: #ff7010;
+}
+
+/* Hide mobile menu elements by default */
+.as_toggle,
+.as_menu_close,
+.as_menu_wrapper {
+  display: none;
+}
+
+/* Mobile menu overlay */
+.as_body_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 991px) {
+  .as_header_wrapper {
+    padding: 10px 15px;
+  }
+
+  .as_logo {
+    padding: 10px 0;
+    border-right: none;
+  }
+
+  /* Hide desktop menu */
+  .desktop_menu,
+  .desktop_btn {
+    display: none;
+  }
+
+  /* Show toggle button */
+  .as_toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .as_toggle img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Mobile menu wrapper styling */
+  .as_menu_wrapper {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: #07273c;
+    z-index: 999;
+    padding: 50px 20px 20px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+  }
+
+  /* When menu is open */
+  .as_menu_wrapper.menu_open {
+    right: 0;
+  }
+
+  /* Show overlay when menu is open */
+  body.menu_is_open .as_body_overlay {
+    display: block;
+  }
+
+  /* Close button */
+  .as_menu_close {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+  }
+
+  .as_menu_close span {
+    color: #fff;
+    font-size: 24px;
+  }
+
+  /* Mobile menu styling */
+  .mobile_menu {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .mobile_menu ul {
+    display: block;
+  }
+
+  .mobile_menu > ul > li {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+
+  .mobile_menu > ul > li > a {
+    padding: 12px 0;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+
+  /* Mobile appointment button */
+  .mobile_btn {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+
+/* Prevent body scrolling when menu is open */
+body.menu_is_open {
+  overflow: hidden;
 }
